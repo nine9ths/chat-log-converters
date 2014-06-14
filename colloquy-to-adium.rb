@@ -42,11 +42,12 @@ Dir.glob("#{options[:input_dir]}/**/*.colloquyTranscript").each do |filename|
   doc = parser.parse
   
   # See if we can find the nickname
-  if nick = doc.find_first('/log/envelope/sender[@self]')
-    nickname = nick.content
-  else
-    nickname = options[:nickname]
-  end
+  #if nick = doc.find_first('/log/envelope/sender[@self]')
+  #  nickname = nick.content
+  #else
+  #  nickname = options[:nickname]
+  #end
+  nickname = options[:nickname]
   
   # Create our new Adium chatlog
   newdoc = XML::Document.new();
